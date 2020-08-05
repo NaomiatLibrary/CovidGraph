@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Flask and Matplotlib demo</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>COVID-19 Data</h1>
+    <div>
+      <p>
+        Data from:https://covid.ourworldindata.org/data/owid-covid-data.csv
+      </p>
+        <p>start
+        <input type=date id=start value="2020-03-13">
+        </p>
+        <p>end
+        <input type=date id=end value="2020-05-05">
+        </p>
+        <div>Columns
+            <input type="radio" name=columns id="total_cases" value="total_cases" checked="checked"><label for="total_cases">total_cases</label>
+            <input type="radio" name=columns id="new_cases" value="new_cases"><label for="new_cases">new_cases</label>
+            <input type="radio" name=columns id="total_deaths" value="total_deaths"><label for="total_deaths">total_deaths</label>
+            <input type="radio" name=columns id="new_deaths" value="new_deaths"><label for="new_deaths">new_deaths</label>
+        </div>
+        <div>Number/Per Million
+            <input type="checkbox" name=per_million id="per_million" value="_per_million"><label for="per_million">per Million</label>
+        </div>
+    </div>
+    <img id=plotimg></img>
+    <div>
+        <div id=countriescheckbox>Countries
+            {{ countries | safe }}
+         </div>
+        <input type=button id=plot value="Plot">
+    </div>
+
+</body>
+<script type="text/javascript" src="/CovidGraph/static/plotcovid.js"> </script>
+
+</html>

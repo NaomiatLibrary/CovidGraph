@@ -1,0 +1,4 @@
+calc.cgi
+owid-covid-data.csv
+__pycache__/
+.DS_Store
